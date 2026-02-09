@@ -11,12 +11,18 @@
     <tr>
         <th>Name</th>
         <th>Age</th>
+        <th>Can Drive</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="p: ${peopleInModel}">
         <td th:text="${p.name}"></td>
         <td th:text="${p.age}"></td>
+
+        <td th:if="${p.age<18}">No</td>
+        <td th:unless="${p.age<18}">Yes</td>
+
+
     </tr>
     </tbody>
 </table>
